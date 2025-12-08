@@ -10,26 +10,29 @@ This project includes:
 * Show detailed results (correct/wrong answers)
 * In-memory storage (no database required
 
-⭐ **Features**
-
-  🔐 **Authentication**
+ **Features**
+ 
+**Authentication**
   * Login & Registration
   * In-memory users
   * Role-based access (ADMIN / USER)
   * Logout functionality
-  🛠 **Admin Features**
+ 
+**Admin Features**
   * Add new quiz questions
   * Edit existing questions
   * Delete questions
   * View all quiz items
-  * 🎯 **User Features**
+
+**User Features**
   * Take quiz with multiple-choice questions
   * Submit answers
   * Score calculation
   * Detailed result page with:
   * ✔ Correct answers (green)
   * ✘ Wrong answers (red)
-  * 💡 **Technologies Used**
+
+**Technologies Used**
   * Spring Boot 3
   * Spring Security 6
   * Thymeleaf
@@ -37,26 +40,7 @@ This project includes:
   * Java Collections (Map, List)
   * Maven
 
-📂 **Project Structure**
-    src/
-    ├── main/
-    │   ├── java/com/example/quizApp/
-    │   │   ├── controller/
-    │   │   ├── model/
-    │   │   ├── service/
-    │   │   └── config/
-    │   └── resources/
-    │       ├── templates/
-    │       │    ├── login.html
-    │       │    ├── register.html
-    │       │    ├── quizList.html
-    │       │    ├── addQuiz.html
-    │       │    ├── editQuiz.html
-    │       │    ├── quiz.html
-    │       │    └── result.html
-    │       └── application.properties
-
-🚀 **_How to Run the Project_**
+**_How to Run the Project_**
     1. Clone the repository
        git clone https://github.com/Sabnish776/Quiz.git
        cd quizApp
@@ -66,31 +50,29 @@ This project includes:
     3. Open in browser
        http://localhost:8080/login
 
-🔑 **Default Admin User (You can add more users through Register)**
+**Default Admin User (You can add more users through Register)**
     username -> admin
     password -> admin
 
-📝 **How Quiz Works**
-* User selects quiz answers
-* Submission is processed in backend
-* Score is calculated
-* Result page shows:
-* Your answer
-* Correct answer
-* Color-coded correctness
+**How Quiz Works**
+    * User selects quiz answers
+    * Submission is processed in backend
+    * Score is calculated
+    * Result page shows:
+    * Your answer
+    * Correct answer
+    * Color-coded correctness
 
-🔒 **Security Configuration**
-* Custom login page
-* CSRF disabled for simplicity
-* GET /logout enabled for logout button
-* Redirects based on user role
+**Security Configuration**
+    * Custom login page
+    * CSRF disabled for simplicity
+    * GET /logout enabled for logout button
+    * Redirects based on user role
 
-All pages styled with clean CSS for a smooth user experience.
-
-📄 License
+**License**
 This project is for educational purposes.
 You may modify or use it freely.
 
-🙌 Author
+**Author**
 Sabnish Seetharaman 
 B.Tech IT — Quiz Application Project
