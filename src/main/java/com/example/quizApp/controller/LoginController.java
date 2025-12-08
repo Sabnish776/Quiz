@@ -31,6 +31,11 @@ public class LoginController {
         this.quizUserDetailsService = quizUserDetailsService ;
         this.authenticationManager = authenticationManager ;
     }
+    @GetMapping("/")
+    public String home() {
+        return "redirect:/login";
+    }
+
     @GetMapping("/login")
     public String loginPage() {
         return "login";
