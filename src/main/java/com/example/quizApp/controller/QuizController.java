@@ -24,7 +24,7 @@ public class QuizController {
     @GetMapping("/quizList")
     public String quizListPage(Model model) {
         model.addAttribute("questions", questionsService.loadQuiz()) ;
-        return "/quizList";
+        return "quizList";
     }
     // Admin functionalities
     @GetMapping("/addQuiz")
