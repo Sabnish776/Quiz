@@ -11,6 +11,7 @@ This project includes:
 * In-memory storage (no database required
 
 ⭐ **Features**
+
   🔐 **Authentication**
   * Login & Registration
   * In-memory users
