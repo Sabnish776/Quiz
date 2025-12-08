@@ -19,7 +19,7 @@ public class QuizUserDetailsService implements UserDetailsService {
     private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     {
-        users.put("sabu",new Users("sabu","sabnish1776@gmail.com",passwordEncoder.encode("sabu") , "ADMIN")) ;
+        users.put("admin",new Users("admin","admin@gmail.com",passwordEncoder.encode("admin") , "ADMIN")) ;
     }
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
