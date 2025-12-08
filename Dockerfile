@@ -1,16 +1,17 @@
-# Stage 1: Build the JAR
-FROM eclipse-temurin:17-jdk AS build
+# Stage 1: Build the app using Maven image
+FROM maven:3.9.5-eclipse-temurin-17 AS build
 WORKDIR /app
 
 COPY pom.xml .
 COPY src ./src
 
-RUN ./mvnw clean package -DskipTests || mvn clean package -DskipTests
+RUN mvn -e -X -DskipTests clean package
 
-# Stage 2: Run the JAR
+# Stage 2: Run the jar
 FROM eclipse-temurin:17-jdk
-VOLUME /tmp
 COPY --from=build /app/target/*.jar app.jar
 
+EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "/app.jar"]
+
 
