@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Quiz</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button, a {
+            padding: 10px 18px;
+            margin-right: 10px;
+            background-color: #2d2db0;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover, a:hover {
+            background-color: #1c1c8e;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Edit Quiz</h2>
+
+    <form th:action="@{/editQuiz}" th:object="${Question}" method="post">
+
+        <!-- ID (keep editable or read-only as you like) -->
+        <label>Question ID:</label>
+        <input type="number" th:field="*{id}" required>
+
+
+        <!-- Question Text -->
+        <label>Question Text:</label>
+        <textarea th:field="*{questionText}" required></textarea>
+
+
+        <!-- Options -->
+        <label>Options:</label>
+
+        <input th:field="*{options[0]}" placeholder="Option 1">
+        <input th:field="*{options[1]}" placeholder="Option 2">
+        <input th:field="*{options[2]}" placeholder="Option 3">
+        <input th:field="*{options[3]}" placeholder="Option 4">
+
+
+        <!-- Correct Answer -->
+        <label>Correct Answer:</label>
+        <input type="text" th:field="*{correctAnswer}" required>
+
+
+        <!-- Buttons -->
+        <button type="submit">Save</button>
+        <a href="/quizList">Cancel</a>
+
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Quiz</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button, a {
+            padding: 10px 18px;
+            margin-right: 10px;
+            background-color: #2d2db0;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover, a:hover {
+            background-color: #1c1c8e;
+        }
+
+        .option-input {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .option-input input {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Add Quiz</h2>
+
+    <form th:action="@{/addQuiz}" th:object="${Question}" method="post">
+
+        <!-- ID -->
+        <label>Question ID:</label>
+        <input type="number" th:field="*{id}" placeholder="Enter question ID" required>
+
+        <!-- Question Text -->
+        <label>Question Text:</label>
+        <textarea th:field="*{questionText}" placeholder="Enter question" required></textarea>
+
+        <!-- Options (4 example inputs) -->
+        <label>Options:</label>
+        <div class="option-input">
+            <input type="text" th:field="*{options[0]}" placeholder="Option 1">
+        </div>
+
+        <div class="option-input">
+            <input type="text" th:field="*{options[1]}" placeholder="Option 2">
+        </div>
+
+        <div class="option-input">
+            <input type="text" th:field="*{options[2]}" placeholder="Option 3">
+        </div>
+
+        <div class="option-input">
+            <input type="text" th:field="*{options[3]}" placeholder="Option 4">
+        </div>
+
+        <!-- Correct Answer -->
+        <label>Correct Answer:</label>
+        <input type="text" th:field="*{correctAnswer}" placeholder="Enter correct answer" required>
+
+        <!-- Buttons -->
+        <button type="submit">Submit</button>
+
+        <a href="/quizList">Cancel</a>
+
+    </form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Result</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .score-box {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .result-card {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+
+        .wrong {
+            color: red;
+            font-weight: bold;
+        }
+
+        .btn {
+            padding: 10px 18px;
+            background: #2d2db0;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background: #1c1c8e;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="score-box">
+        <p th:text="'Your Score: ' + ${score} + ' / ' + ${total}"></p>
+    </div>
+
+    <!-- Result List -->
+    <div th:each="res : ${result}" class="result-card">
+
+        <h3>
+            <span th:text="'Q' + ${res.id} + ': '"></span>
+            <span th:text="${res.question}"></span>
+        </h3>
+
+        <!-- User Answer -->
+        <p th:if="${res.correct == 1}" class="correct">
+            Your Answer: <span th:text="${res.userAnswer}"></span> ✔ Correct
+        </p>
+        <p th:if="${res.correct == 0}" class="wrong">
+            Your Answer: <span th:text="${res.userAnswer}">No answer</span> ✘ Wrong
+        </p>
+
+        <!-- Correct Answer Always Shown -->
+        <p><strong>Correct Answer:</strong> <span th:text="${res.correctAnswer}"></span></p>
+
+    </div>
+
+    <!-- Buttons -->
+    <a href="/quiz" class="btn">Try Again</a>
+    <a href="/logout" class="btn" style="margin-left:10px;">Logout</a>
+
+</div>
+
+</body>
+</html>
