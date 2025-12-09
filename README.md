@@ -55,19 +55,19 @@ This project includes:
 * password -> admin
 
 **How Quiz Works**
-    * User selects quiz answers
-    * Submission is processed in backend
-    * Score is calculated
-    * Result page shows:
-    * Your answer
-    * Correct answer
-    * Color-coded correctness
+* User selects quiz answers
+* Submission is processed in backend
+* Score is calculated
+* Result page shows:
+* Your answer
+* Correct answer
+* Color-coded correctness
 
 **Security Configuration**
-    * Custom login page
-    * CSRF disabled for simplicity
-    * GET /logout enabled for logout button
-    * Redirects based on user role
+* Custom login page
+* CSRF disabled for simplicity
+* GET /logout enabled for logout button
+* Redirects based on user role
 
 **License**
 * This project is for educational purposes.
