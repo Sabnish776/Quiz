@@ -41,18 +41,18 @@ This project includes:
   * Maven
 
 **_How to Run the Project_**
-    1. Clone the repository
-       git clone https://github.com/Sabnish776/Quiz.git
-       cd quizApp
-    2. Run using Maven 
-        -> mvn clean install
-        -> mvn spring-boot:run
-    3. Open in browser
-       http://localhost:8080/login
+* Clone the repository
+   git clone https://github.com/Sabnish776/Quiz.git
+   cd quizApp
+* Run using Maven 
+    -> mvn clean install
+    -> mvn spring-boot:run
+* Open in browser http://localhost:8080/login
+* OR https://quizeyy.onrender.com -> hosted online 
 
 **Default Admin User (You can add more users through Register)**
-    username -> admin
-    password -> admin
+* username -> admin
+* password -> admin
 
 **How Quiz Works**
     * User selects quiz answers
@@ -70,9 +70,9 @@ This project includes:
     * Redirects based on user role
 
 **License**
-This project is for educational purposes.
-You may modify or use it freely.
+* This project is for educational purposes.
+* You may modify or use it freely.
 
 **Author**
-Sabnish Seetharaman 
-B.Tech IT — Quiz Application Project
+* Sabnish Seetharaman 
+* B.Tech IT — Quiz Application Project
